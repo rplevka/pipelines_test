@@ -1,5 +1,15 @@
 pipeline {
     agent any
+ 
+    options {
+	buildDiscarder(logRotator(numToKeepStr: '10'))
+    }
+ 
+    parameters {
+	string(name: 'run',
+	       description: "the job build url to process")
+    }
+
     stages{
         stage('prepare stuff') {
             steps {
@@ -8,7 +18,7 @@ pipeline {
         }
         stage('run stuff') {
             steps {
-                echo "pp2 for ${run}!"
+                echo "pp2 for "+params.run+"!"
             }
         }
     }
