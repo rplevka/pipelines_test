@@ -1,0 +1,15 @@
+pipeline {
+    agent any
+    stages{
+        stage('prepare stuff') {
+            steps {
+                echo "preparing stuff.."
+            }
+        }
+        stage('run stuff') {
+            steps {
+                echo "pp2 for ${run}!"
+            }
+        }
+    }
+}
