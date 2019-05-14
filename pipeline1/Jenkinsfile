@@ -10,7 +10,7 @@ pipeline {
             steps {
                 echo 'calling pl2'
                 build job: 'pipeline2', parameters: [run(description: '', name: 'run', runId: env.JOB_NAME+'#'+env.BUILD_NUMBER)]
-            }h
+            }
         }
     }
 }
