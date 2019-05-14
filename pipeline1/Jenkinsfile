@@ -1,0 +1,16 @@
+pipeline {
+    agent any
+    stages {
+        stage('preparing stuff') {
+            steps {
+                echo 'preparing bits and pieces'
+            }
+        }
+        stage('call pipeline1') {
+            steps {
+                echo 'calling pl2'
+                build job: 'pipeline2', parameters: [run(description: '', name: 'run', runId: env.JOB_NAME+'#'+env.BUILD_NUMBER)]
+            }h
+        }
+    }
+}
