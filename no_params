@@ -1,0 +1,10 @@
+pipeline {
+    agent any
+    stages {
+        stage(params) {
+            steps {
+                sh "echo " + params.foo
+            }
+        }
+    }
+}
